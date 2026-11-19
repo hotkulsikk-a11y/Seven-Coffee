@@ -1,173 +1,134 @@
 # Seven-Coffee
 Website untuk pesan kopi
-:root{
-  --navy:#0f2a4a; --navy2:#173b66; --gold:#e3a72f; --cream:#f6efe4; --paper:#fffaf2;
-  --coffee:#3b2316; --ink:#1d1a17; --muted:#6f6458; --line:#e6dccd; --wa:#1fa855;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55}
-img{display:block;max-width:100%}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seven Coffee — Katalog Kopi SMK Negeri 7 Medan</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-/* top bar */
-.topbar{background:var(--navy);color:#fff;font-size:13px}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.3px}
-.logo{width:42px;height:42px;flex:none;border-radius:50%;background:#fff;padding:3px;object-fit:contain}
-.price{font-family:'Fraunces',serif;font-weight:700;font-size:24px;color:#a8741a;white-space:nowrap}
-.price small{font-family:'Plus Jakarta Sans',sans-serif;font-size:12px;color:var(--muted);font-weight:500}
-.ttl{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.total{display:flex;justify-content:space-between;font-weight:700;color:var(--navy);font-size:16px}
-.brand small{display:block;font-weight:500;opacity:.75;font-size:11px;letter-spacing:.8px;text-transform:uppercase}
-.cartbtn{background:var(--gold);color:var(--navy);border:0;border-radius:999px;padding:8px 16px;font:700 13px inherit;font-family:inherit;cursor:pointer;display:flex;gap:8px;align-items:center}
-.cartbtn .n{background:var(--navy);color:#fff;border-radius:999px;min-width:20px;height:20px;display:grid;place-items:center;font-size:11px;padding:0 6px}
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29Z"/></symbol>
+    <symbol id="crest" viewBox="0 0 120 140">
+      <path d="M60 4 112 22v44c0 34-22 58-52 70C30 124 8 100 8 66V22L60 4Z" fill="#0f2a4a" stroke="#e3a72f" stroke-width="5"/>
+      <path d="M60 16 100 30v36c0 27-17 46-40 56-23-10-40-29-40-56V30l40-14Z" fill="none" stroke="#e3a72f" stroke-width="1.5" opacity=".6"/>
+      <text x="60" y="60" text-anchor="middle" font-family="Fraunces,serif" font-weight="900" font-size="44" fill="#e3a72f">7</text>
+      <path d="M52 72c-2.5-3 2.5-5 0-8M60 72c-2.5-3 2.5-5 0-8M68 72c-2.5-3 2.5-5 0-8" fill="none" stroke="#f6efe4" stroke-width="1.8" stroke-linecap="round" opacity=".75"/>
+      <path d="M40 75h40l-3.5 11a5 5 0 0 1-5 3.5H48.5a5 5 0 0 1-5-3.5L40 75Z" fill="#f6efe4"/>
+      <path d="M80 77.5c5 0 5 7 0 7" fill="none" stroke="#f6efe4" stroke-width="2.6"/>
+      <path id="arcC" d="M31 96 Q60 114 89 96" fill="none"/>
+      <text font-family="Plus Jakarta Sans,sans-serif" font-weight="800" font-size="8.5" fill="#e3a72f" letter-spacing="2.2"><textPath href="#arcC" startOffset="50%" text-anchor="middle">COFFEE</textPath></text>
+    </symbol>
+  </defs>
+</svg>
 
-/* hero */
-.hero{position:relative;color:#fff;overflow:hidden;background:#0a1e36}
-.hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 55%;transform:scale(1.04);filter:saturate(.9)}
-.hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(10,30,54,.95) 0%,rgba(10,30,54,.8) 40%,rgba(10,30,54,.3) 75%,rgba(10,30,54,.2) 100%),
-  linear-gradient(0deg,rgba(10,30,54,.9) 0%,rgba(10,30,54,0) 35%)}
-.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,680px);align-items:center;min-height:560px;padding-top:72px;padding-bottom:84px}
-.frame{position:relative;justify-self:center;width:min(380px,100%)}
-.frame::before{content:"";position:absolute;inset:0;border:2px solid var(--gold);border-radius:220px 220px 26px 26px;transform:translate(16px,16px)}
-.frame .arch{position:relative;aspect-ratio:4/5;border-radius:220px 220px 26px 26px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-.frame .arch img{width:100%;height:100%;object-fit:cover;object-position:62% center}
-.frame .arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(10,30,54,.75) 100%)}
-.frame .cap{position:absolute;left:-26px;bottom:34px;background:var(--paper);color:var(--navy);border-radius:14px;padding:12px 16px;box-shadow:0 14px 30px rgba(0,0,0,.3);font-size:13px;line-height:1.35}
-.frame .cap b{display:block;font-family:'Fraunces',serif;font-size:17px}
-.frame .seal{position:absolute;top:18px;right:-18px;width:78px;height:78px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 10px 24px rgba(0,0,0,.3);border:3px solid var(--gold)}
-.frame .seal img{width:62px;height:62px;border-radius:50%;object-fit:contain}
-.price-chip{display:inline-flex;align-items:baseline;gap:6px;margin-top:18px;font-size:14px;color:#cfd9e6}
-.price-chip b{font-family:'Fraunces',serif;font-size:26px;color:var(--gold)}
-.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(227,167,47,.18);border:1px solid rgba(227,167,47,.6);color:#ffd88a;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
-.hero h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(40px,7vw,78px);line-height:1;margin:18px 0 14px;letter-spacing:-1px}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p{max-width:560px;font-size:17px;opacity:.92}
-.hero .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:12px;padding:13px 20px;font-weight:700;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn-gold{background:var(--gold);color:var(--navy)}
-.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
-.btn-wa{background:var(--wa);color:#fff;box-shadow:0 6px 18px rgba(31,168,85,.3)}
-.btn-wa svg{width:20px;height:20px}
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <img class="logo" src="img/logo-smkn7.png" alt="Logo SMK Negeri 7 Medan">
+      <div>SMK Negeri 7 Medan<small>Teaching Factory</small></div>
+    </div>
+    <button class="cartbtn" onclick="openCart()">Keranjang <span class="n" id="cartN">0</span></button>
+  </div>
+</div>
 
-/* strip */
-.strip{background:var(--gold);color:var(--navy);font-weight:700;font-size:14px;overflow:hidden;white-space:nowrap}
-.strip div{display:inline-block;padding:10px 0;animation:mq 28s linear infinite}
-.strip span{margin:0 22px}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+<header class="hero">
+  <div class="hero-bg"><img src="img/hero-lounge.jpg" alt="Ruang lounge Seven Coffee SMK Negeri 7 Medan"></div>
+  <div class="wrap hero-in">
+    <div>
+      <span class="tag">☕ Seven Coffee · SMK Negeri 7 Medan</span>
+      <h1>Kopi <em>Sanger</em> &amp;<br>Kopi <em>Aren</em></h1>
+      <p>Dua menu andalan Seven Coffee — diseduh dari espresso segar oleh siswa-siswi SMK Negeri 7 Medan. Pilih, atur, lalu pesan langsung lewat WhatsApp.</p>
+      <div class="price-chip">Semua menu <b>Rp 15.000</b> / gelas</div>
+      <div class="cta">
+        <a class="btn btn-gold" href="#menu">Lihat Menu</a>
+        <a class="btn btn-wa" href="https://wa.me/6285358384078?text=Halo%20Seven%20Coffee%2C%20saya%20ingin%20bertanya%20tentang%20menu%20kopi." target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Chat WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-/* section */
-section{padding:72px 0}
-.eyebrow{color:#a8741a;font-weight:700;font-size:12px;letter-spacing:1.4px;text-transform:uppercase}
-h2{font-family:'Fraunces',serif;font-size:clamp(30px,4.5vw,46px);line-height:1.08;color:var(--navy);margin:8px 0 10px}
-.lead{color:var(--muted);max-width:620px}
+<div class="strip"><div>
+  <span>★ SEVEN COFFEE</span><span>SMK NEGERI 7 MEDAN</span><span>★ ICE SANGER ESPRESSO</span><span>ICE AREN LATTE</span><span>★ RP 15.000 / GELAS</span><span>PESAN VIA WHATSAPP</span>
+  <span>★ SEVEN COFFEE</span><span>SMK NEGERI 7 MEDAN</span><span>★ ICE SANGER ESPRESSO</span><span>ICE AREN LATTE</span><span>★ RP 15.000 / GELAS</span><span>PESAN VIA WHATSAPP</span>
+</div></div>
 
-.filters{display:flex;gap:8px;margin:28px 0 26px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--paper);padding:8px 16px;border-radius:999px;font:600 14px inherit;font-family:inherit;cursor:pointer;color:var(--navy)}
-.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+<section id="menu">
+  <div class="wrap">
+    <span class="eyebrow">Menu Kami</span>
+    <h2>Katalog Produk Kopi</h2>
+    <p class="lead">Ketuk tab <b>Komposisi</b> untuk melihat takaran setiap bahan, atur pilihan Anda, lalu tekan <b>Pesan via WA</b>.</p>
 
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
-.card:hover{box-shadow:0 18px 40px rgba(15,42,74,.12);transform:translateY(-3px)}
-.card.hide{display:none}
-.ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:#ddd}
-.ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-.card:hover .ph img{transform:scale(1.05)}
-.badge{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:6px 10px;border-radius:8px}
-.badge.g{left:auto;right:14px;background:var(--gold);color:var(--navy)}
-.body{padding:22px 22px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
-.card h3{font-family:'Fraunces',serif;font-size:28px;color:var(--navy);line-height:1.1}
-.desc{color:var(--muted);font-size:14.5px}
-.tabs{display:flex;background:var(--cream);border-radius:10px;padding:4px;gap:4px}
-.tabs button{flex:1;border:0;background:transparent;padding:8px;border-radius:8px;font:600 13px inherit;font-family:inherit;color:var(--muted);cursor:pointer}
-.tabs button.on{background:#fff;color:var(--navy);box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.pane{display:none}.pane.on{display:block}
+    <div class="filters">
+      <button class="chip on" data-f="all">Semua</button>
+      <button class="chip" data-f="strong">Kopi Kuat</button>
+      <button class="chip" data-f="milky">Lembut &amp; Susu</button>
+    </div>
 
-.comp{display:flex;flex-direction:column;gap:10px}
-.row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:14px;align-items:center}
-.row b{font-weight:600}
-.row .v{font-variant-numeric:tabular-nums;color:var(--navy);font-weight:700}
-.bar{grid-column:1/-1;height:7px;border-radius:9px;background:var(--line);overflow:hidden}
-.bar i{display:block;height:100%;border-radius:9px;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
 
-.glass{display:flex;gap:18px;align-items:center}
-.glass svg{flex:none}
-.legend{font-size:13px;display:flex;flex-direction:column;gap:6px}
-.legend span{display:flex;align-items:center;gap:8px}
-.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.notes{display:flex;flex-wrap:wrap;gap:6px}
-.notes span{font-size:12px;font-weight:600;background:#fff;border:1px solid var(--line);padding:5px 10px;border-radius:999px;color:var(--coffee)}
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Cara Memesan</span>
+    <h2>Pesan dalam 3 langkah</h2>
+    <div class="steps">
+      <div class="step"><b>Pilih menu</b><p>Tentukan Ice Sanger Espresso atau Ice Aren Latte (Rp 15.000/gelas), lalu atur level gula, es, dan jumlah.</p></div>
+      <div class="step"><b>Isi data</b><p>Tambahkan ke keranjang, lalu tulis nama dan kelas atau lokasi pengambilan.</p></div>
+      <div class="step"><b>Kirim ke WhatsApp</b><p>Pesanan otomatis tersusun rapi dan terkirim ke nomor +62 853-5838-4078.</p></div>
+    </div>
+  </div>
+</section>
 
-.opt{display:flex;flex-direction:column;gap:6px}
-.opt label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
-.seg{display:flex;gap:6px;flex-wrap:wrap}
-.seg button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:7px 12px;font:600 13px inherit;font-family:inherit;cursor:pointer;color:var(--ink)}
-.seg button.on{border-color:var(--navy);background:var(--navy);color:#fff}
+<section class="school">
+  <div class="wrap sgrid">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Tentang Kami</span>
+      <h2>Seven Coffee<span style="display:block;font-size:.55em;font-weight:500;color:var(--gold);margin-top:8px">Kopi seduhan Siswa SMK Negeri 7 Medan</span></h2>
+      <p class="lead">Setiap gelas adalah hasil praktik nyata siswa — dari menakar espresso, mengocok krimer, hingga menyajikan ke pelanggan. Membeli kopi ini berarti ikut mendukung pembelajaran kewirausahaan di sekolah kami.</p>
+      <div class="pillars">
+        <div class="pillar"><b>Karya Siswa</b><p>Diracik dan disajikan langsung oleh siswa.</p></div>
+        <div class="pillar"><b>Takaran Tepat</b><p>Setiap bahan ditakar sesuai resep standar.</p></div>
+        <div class="pillar"><b>Espresso Segar</b><p>Diekstrak saat dipesan, bukan disimpan.</p></div>
+        <div class="pillar"><b>Wirausaha</b><p>Belajar bisnis lewat produk yang nyata.</p></div>
+      </div>
+    </div>
+    <svg class="bigcrest" viewBox="0 0 120 140"><use href="#crest"/></svg>
+  </div>
+</section>
 
-.buy{margin-top:auto;display:flex;gap:10px;align-items:center;padding-top:6px}
-.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:12px;background:#fff}
-.qty button{width:38px;height:44px;border:0;background:transparent;font-size:20px;cursor:pointer;color:var(--navy)}
-.qty span{min-width:26px;text-align:center;font-weight:700}
-.buy .btn{flex:1;padding:12px 14px;font-size:14px}
-.addc{background:var(--cream);color:var(--navy);border:1px solid var(--line)}
+<footer>
+  <div class="wrap">
+    <div style="display:flex;gap:12px;align-items:center"><img class="logo" src="img/logo-smkn7.png" alt=""><div><b style="color:#fff">Seven Coffee · SMK Negeri 7 Medan</b><br>Produk Teaching Factory — Medan, Sumatera Utara</div></div>
+    <div>Pemesanan WhatsApp: <a href="https://wa.me/6285358384078" target="_blank" rel="noopener">+62 853-5838-4078</a></div>
+  </div>
+</footer>
 
-/* about school */
-.school{background:var(--navy);color:#e9eef6;position:relative;overflow:hidden}
-.school::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:60px solid rgba(227,167,47,.08)}
-.school h2{color:#fff}
-.school .lead{color:#b9c6d8}
-.sgrid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;position:relative}
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
-.pillar{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
-.pillar b{display:block;color:var(--gold);font-family:'Fraunces',serif;font-size:20px;margin-bottom:4px}
-.pillar p{font-size:13.5px;color:#c7d2e1}
-.bigcrest{justify-self:center;width:min(320px,80%)}
-.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:30px}
-.step{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;position:relative}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:-14px;left:18px;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:14px}
-.step b{display:block;color:var(--navy);margin:6px 0 4px}
-.step p{font-size:14px;color:var(--muted)}
+<a class="fab" href="https://wa.me/6285358384078" target="_blank" rel="noopener" aria-label="WhatsApp" style="color:#fff"><svg><use href="#wa"/></svg></a>
 
-footer{background:#0a1e36;color:#9fb0c6;font-size:13.5px;padding:34px 0}
-footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
-footer a{color:var(--gold);text-decoration:none;font-weight:600}
+<div class="ov" id="ov" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer" aria-label="Keranjang">
+  <div class="dh"><h3>Keranjang Pesanan</h3><button class="x" onclick="closeCart()" aria-label="Tutup">×</button></div>
+  <div class="db">
+    <div id="items"></div>
+    <div class="field"><label for="nm">Nama pemesan</label><input id="nm" placeholder="mis. Rizky"></div>
+    <div class="field"><label for="kl">Kelas / lokasi ambil</label><input id="kl" placeholder="mis. XI Tata Boga 1 / Kantin"></div>
+    <div class="field"><label for="ct">Catatan (opsional)</label><textarea id="ct" rows="2" placeholder="mis. diambil jam istirahat"></textarea></div>
+  </div>
+  <div class="df">
+    <div class="total"><span>Total</span><span id="totalV">Rp 0</span></div>
+    <a class="btn btn-wa" id="sendAll" href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg>Kirim Pesanan via WhatsApp</a>
+    <small>Ke nomor +62 853-5838-4078 · pesan akan dibuka di WhatsApp</small>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
 
-/* drawer */
-.ov{position:fixed;inset:0;background:rgba(10,20,35,.5);opacity:0;pointer-events:none;transition:.25s;z-index:40}
-.ov.on{opacity:1;pointer-events:auto}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--paper);z-index:50;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
-.drawer.on{transform:none}
-.dh{padding:20px 22px;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center}
-.dh h3{font-family:'Fraunces',serif;font-size:24px}
-.x{background:transparent;border:0;color:#fff;font-size:26px;cursor:pointer;line-height:1}
-.db{padding:20px 22px;overflow:auto;flex:1;display:flex;flex-direction:column;gap:14px}
-.item{display:flex;gap:12px;align-items:center;border-bottom:1px dashed var(--line);padding-bottom:12px}
-.item img{width:56px;height:56px;border-radius:10px;object-fit:cover}
-.item .t{flex:1;font-size:14px}
-.item .t b{display:block;color:var(--navy)}
-.item .t small{color:var(--muted)}
-.rm{background:transparent;border:0;color:#b4462f;font-weight:700;cursor:pointer;font-size:13px;font-family:inherit}
-.empty{color:var(--muted);text-align:center;padding:30px 0}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
-.field input,.field textarea{border:1px solid var(--line);border-radius:10px;padding:11px 12px;font:15px inherit;font-family:inherit;background:#fff}
-.df{padding:18px 22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
-.df small{color:var(--muted);text-align:center}
-
-.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;font-size:14px;opacity:0;transition:.3s;z-index:60;pointer-events:none}
-.toast.on{opacity:1;transform:translate(-50%,0)}
-.fab{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 24px rgba(31,168,85,.4);z-index:30}
-.fab svg{width:30px;height:30px}
-
-@media (max-width:800px){
-  .sgrid{grid-template-columns:1fr}
-  .bigcrest{order:-1;width:180px}
-  .hero-in{min-height:0;padding-top:56px;padding-bottom:64px}
-  .frame{width:min(270px,78%)}
-  .frame .cap{left:-18px}
-  .hero-bg::after{background:linear-gradient(180deg,rgba(10,30,54,.9) 0%,rgba(10,30,54,.75) 50%,rgba(10,30,54,.95) 100%)}
-  .brand .full{display:none}
-}
+<script src="js/script.js"></script>
+</body>
+</html>
